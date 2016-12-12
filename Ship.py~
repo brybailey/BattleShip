@@ -1,0 +1,27 @@
+from random import randint
+from BattleshipBoard import BattleshipBoard
+
+class Ship(object):
+
+    ship_length = 0
+    up_or_accross = 0
+
+    def __init__(self, board):
+        #create a ship with random length and positioning
+        self.ship_length = randint(1, board.get_length() - 2 )
+        up_or_accross = randint(0,1)
+        
+    def which_way(self):
+        if self.up_or_accross == 0:
+            return 0
+        else: return 1
+
+    def length(self):
+        return self.ship_length
+
+test_board = BattleshipBoard( 3, 5 )
+test_ship = Ship( test_board )
+print test_ship.length()
+print test_ship.which_way()
+        
+    
